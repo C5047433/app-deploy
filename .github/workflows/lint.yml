@@ -1,0 +1,27 @@
+name: linting
+
+on: 
+  push:
+    branches: 
+      - main
+
+jobs: 
+  linting-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+  
+      - name: python checkout
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+  
+      - name: install flake
+        run: pip install flake8
+  
+      - name: run flake
+        run: flake8 script.py --max-line-length=79
+        
+        
+        
