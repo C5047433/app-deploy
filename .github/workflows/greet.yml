@@ -20,4 +20,4 @@ jobs:
           python-version: '3.x'
 
       - name: run script
-        run: python script.py John Doe
+        run: python script.py "John Doe"
